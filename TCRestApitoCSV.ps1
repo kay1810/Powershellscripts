@@ -1,6 +1,7 @@
-$user="%username%"
-$pass="%password%"
+$user=$args[0]
+$pass=$args[1]
 $credpair="$($user):$($pass)"
+Write-Host $credpair
 $encodedcred=[System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes($credpair))
 $hosturl= "http://ec2-13-235-103-140.ap-south-1.compute.amazonaws.com:8080"
 $Header=@{
